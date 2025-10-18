@@ -250,9 +250,22 @@ int main() {
     
     // first 5 inserts
     cout << "Welcome in :)" << endl;
-    for (int = 0; i < 5; ++i) {
-        int randomIndex = rand()
+    for (int i = 0; i < 5; ++i) {
+        int randomIndex = rand() % names.size();
+        string customersName = names[randomIndex];
+        line.push_back(customersName);
+        cout << customersName << " has entered the line." << endl;
     };
+
+    // now we have a base list we can run the 20 runs
+
+    for (int minute = 1; minute <=20, minute++) {
+        cout << "Minute " << minute << ":" << endl;
+
+        
+    }
+
+
 
 
 
