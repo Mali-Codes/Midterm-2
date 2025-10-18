@@ -1,4 +1,7 @@
 #include <iostream>
+#include <vector>
+#include <string>
+#include <fstream>
 using namespace std;
 
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
@@ -201,17 +204,40 @@ public:
         }
         cout << endl;
     }
+
+    string get_front() {
+        if (head) return head->data;        //test
+        return "";
+    };
+
+    string get_back() {
+        if (tail) return tail->data;       //test
+        return "";
+    };
 };
 
 int main() {
     cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS;  // dummy statement to avoid compiler warning
 
+    vector<string> names;
+    ifstream nameFile("names.txt");
+    string name;
+    while (getline(nameFile, name)) {
+        names.push_back(name);
+    }
+
+        for (int run = 0; run < 20; ++run) {
+            
+        
+        }
     // for looop for all 20 runs
 
     // gotta have a list and its gonna be strings so mod list build FIRST*****
 
     // going to be calling a bunch of different methods in the for loop 
     // gonna use random  for randoms leaving
+
+    //gotta have methods for getting front back and to display size of list
     
     return 0;
 }
