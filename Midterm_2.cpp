@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
@@ -217,16 +219,26 @@ public:
 };
 
 int main() {
-    cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS;  // dummy statement to avoid compiler warning
+    cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS << "\n";  // dummy statement to avoid compiler warning
 
     vector<string> names;
     ifstream nameFile("names.txt");
     string name;
-    while (getline(nameFile, name)) {
+    
+    while (nameFile >> name) {
         names.push_back(name);
     }
+    nameFile.close(); // gotta close the file after reading
 
-        for (int run = 0; run < 20; ++run) {
+    cout << "Names loaded: " << names.size() << endl; //successful loading check 
+    
+
+    DoublyLinkedList line;
+
+
+
+
+    for (int run = 0; run < 20; ++run) {
             
         
         }
