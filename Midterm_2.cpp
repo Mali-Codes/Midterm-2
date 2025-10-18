@@ -208,12 +208,12 @@ public:
     }
 
     string get_front() {
-        if (head) return head->data;        //test
+        if (head) return head->data;        
         return "";
     };
 
     string get_back() {
-        if (tail) return tail->data;       //test
+        if (tail) return tail->data;       
         return "";
     };
 };
@@ -233,21 +233,40 @@ int main() {
     cout << "Names loaded: " << names.size() << endl; //successful loading check 
     
 
-    DoublyLinkedList line;
+    DoublyLinkedList line;  //list is initialized here
+
+
+    // for (int run = 0; run < 20; ++run) {    //fill the list 
+    //     int randomIndex = rand() % names.size();
+    //     string customersName = names[randomIndex];
+    //     line.push_back(customersName);    
+    //     };
+
+    // cout << "just a full list to check" << endl;
+    // line.print();  //print full list to check
+    // cout << "Front of the list: " << line.get_front() << endl; //test front
+    // cout << "Back of the list: " << line.get_back() << endl;
+    
+    
+    // first 5 inserts
+    cout << "Welcome in :)" << endl;
+    for (int = 0; i < 5; ++i) {
+        int randomIndex = rand()
+    };
 
 
 
 
-    for (int run = 0; run < 20; ++run) {
-            
-        
-        }
+
+
     // for looop for all 20 runs
 
     // gotta have a list and its gonna be strings so mod list build FIRST*****
 
-    // going to be calling a bunch of different methods in the for loop 
-    // gonna use random  for randoms leaving
+    // going to be calling a bunch of different methods in the for loop
+
+    // gonna use randoms to see what methods are done and what arent
+        //giving each a chance to run or not run
 
     //gotta have methods for getting front back and to display size of list
     
