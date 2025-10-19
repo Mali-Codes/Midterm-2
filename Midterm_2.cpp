@@ -223,7 +223,7 @@ int main() {
 
     srand(time(0));   // for randomization, was already random in choices but not per execution 
     // will now produce different results each execution
-    
+
     vector<string> names;
     ifstream nameFile("names.txt");
     string name;
@@ -264,33 +264,48 @@ int main() {
 
     for (int minute = 1; minute <=20; minute++) {
         cout << "Minute " << minute << ":" << endl;
-
+        
+        // ENTERING BACK
         int prob = rand() % 100 + 1;
-        if (prob <= 10) {
+        if (prob <= 60) {
             int randomIndex = rand() % names.size(); // this gets the random name
             string customersName = names[randomIndex]; //this assigns it to a string - will be using these two repeatedly like in the 20 names test
             line.push_back(customersName);
-            cout << customersName << " has VIP." << endl;
+            cout << customersName << " has enterd the line." << endl;
         };
 
+        // VIP FRONT
         prob = rand() % 100 + 1;
         if (prob <= 10) {
             
             int randomIndex = rand() % names.size(); 
             string VIP = names[randomIndex]; 
             line.push_front(VIP);
-            cout << VIP << " has entered the line." << endl;
+            cout << VIP << " has VIP." << endl;
         
 
         };
 
-
+        // LEAVING BACK
         prob = rand() % 100 + 1; // we do every if statement for a new random chance
         if (prob <= 20) {
             string leaving = line.get_back();
             line.pop_back();
             cout << leaving << " has left the line from the back." << endl;
         };
+
+        // SERVING FRONT
+        prob = rand() % 100 + 1;
+        if (prob <= 40) {
+            string served = line.get_front();
+            if (served != "") {
+                cout << served << " is served" << endl;
+                line.pop_front();
+            }
+        }
+
+        
+
 
 
     };
