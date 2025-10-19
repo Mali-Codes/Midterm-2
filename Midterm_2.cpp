@@ -263,14 +263,32 @@ int main() {
         cout << "Minute " << minute << ":" << endl;
 
         int prob = rand() % 100;
-        if (prob <= 40) {
+        if (prob <= 60) {
             int randomIndex = rand() % names.size(); // this gets the random name
             string customersName = names[randomIndex]; //this assigns it to a string - will be using these two repeatedly like in the 20 names test
             line.push_back(customersName);
             cout << customersName << " has entered the line." << endl;
         };
 
-        prob = rand() % 100; 
+        int prob = rand() % 100;
+        if (prob <= 10) {
+            
+            int randomIndex = rand() % names.size(); 
+            string customersName = names[randomIndex]; 
+            line.push_back(customersName);
+            cout << customersName << " has entered the line." << endl;
+            
+            string VIP = line.push_front();
+
+        }
+
+
+        prob = rand() % 100; // we do every if statement for a new random chance
+        if (prob <= 20) {
+            string leaving = line.get_back();
+            line.pop_back();
+            cout << leaving << " has left the line from the back." << endl;
+        };
 
 
     };
