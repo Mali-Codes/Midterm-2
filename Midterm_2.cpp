@@ -27,6 +27,15 @@ private:
 public:
     DoublyLinkedList() { head = nullptr; tail = nullptr; }
 
+    int size() {
+    int count = 0;
+    Node* temp = head;
+    while (temp) {
+        count++;
+        temp = temp->next;
+    }
+    return count;
+    
     void insert_after(string value, int position) {
         if (position < 0) {
             cout << "Position must be >= 0." << endl;
@@ -194,6 +203,7 @@ public:
         cout << endl;
     }
 
+}
     void print_reverse() {
         Node* current = tail;
         if (!current) { 
@@ -304,7 +314,16 @@ int main() {
             }
         }
 
-        
+        prob = rand() % 100 + 1;
+        if (prob <=10) {
+            int lineSize = line.size(); //whole line
+
+        // delete random in whole line
+            if (lineSize > 0) {
+                int somePos = rand() % lineSize;
+                string leaving = line.get_at(somePos)
+            }
+        };
 
 
 
