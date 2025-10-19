@@ -259,11 +259,26 @@ int main() {
 
     // now we have a base list we can run the 20 runs
 
-    for (int minute = 1; minute <=20, minute++) {
+    for (int minute = 1; minute <=20; minute++) {
         cout << "Minute " << minute << ":" << endl;
 
-        
-    }
+        int prob = rand() % 100;
+        if (prob <= 40) {
+            int randomIndex = rand() % names.size(); // this gets the random name
+            string customersName = names[randomIndex]; //this assigns it to a string - will be using these two repeatedly like in the 20 names test
+            line.push_back(customersName);
+            cout << customersName << " has entered the line." << endl;
+        };
+
+        prob = rand() % 100; 
+
+
+    };
+
+    cout << "Resulting line:" << endl;
+        cout << "  ";
+        line.print();
+        cout << endl;
 
 
 
