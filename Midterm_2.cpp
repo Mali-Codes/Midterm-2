@@ -221,6 +221,9 @@ public:
 int main() {
     cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS << "\n";  // dummy statement to avoid compiler warning
 
+    srand(time(0));   // for randomization, was already random in choices but not per execution 
+    // will now produce different results each execution
+    
     vector<string> names;
     ifstream nameFile("names.txt");
     string name;
@@ -262,28 +265,27 @@ int main() {
     for (int minute = 1; minute <=20; minute++) {
         cout << "Minute " << minute << ":" << endl;
 
-        int prob = rand() % 100;
-        if (prob <= 60) {
+        int prob = rand() % 100 + 1;
+        if (prob <= 10) {
             int randomIndex = rand() % names.size(); // this gets the random name
             string customersName = names[randomIndex]; //this assigns it to a string - will be using these two repeatedly like in the 20 names test
             line.push_back(customersName);
-            cout << customersName << " has entered the line." << endl;
+            cout << customersName << " has VIP." << endl;
         };
 
-        int prob = rand() % 100;
+        prob = rand() % 100 + 1;
         if (prob <= 10) {
             
             int randomIndex = rand() % names.size(); 
-            string customersName = names[randomIndex]; 
-            line.push_back(customersName);
-            cout << customersName << " has entered the line." << endl;
-            
-            string VIP = line.push_front();
+            string VIP = names[randomIndex]; 
+            line.push_front(VIP);
+            cout << VIP << " has entered the line." << endl;
+        
 
-        }
+        };
 
 
-        prob = rand() % 100; // we do every if statement for a new random chance
+        prob = rand() % 100 + 1; // we do every if statement for a new random chance
         if (prob <= 20) {
             string leaving = line.get_back();
             line.pop_back();
